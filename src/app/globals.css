@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  --color-primary: #D5B875;
+  --color-primary-dark: #B99D5C;
+  --color-primary-light: #FFF4D9;
+  
+  /* Emerald Palette */
+  --color-emerald-dark: #051413;
+  --color-emerald-deep: #071F1D;
+  --color-emerald-card: #0C2522;
+  --color-emerald-border: rgba(213, 184, 117, 0.18);
+  
+  /* Ivory Light Palette */
+  --color-ivory-light: #FAF6F0;
+  --color-ivory-dark: #EBE6DC;
+  
+  /* Typography Colors */
+  --color-text-dark: #1C2A28;
+  --color-text-light: #FAF6F0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #051413;
+  color: #FAF6F0;
+  scrollbar-width: thin;
+  scrollbar-color: #D5B875 #051413;
+}
+
+/* Custom Webkit scrollbar matching editorial style */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #051413;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5B875;
+}
+
+/* Elegant Dotted leaders for menu printed card style */
+.dotted-leader-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.dotted-leader-text {
+  flex-grow: 1;
+  display: flex;
+  align-items: baseline;
+}
+
+.dotted-leader-text::after {
+  content: " ....................................................................................................................................................................................................................";
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 12px;
+  color: rgba(213, 184, 117, 0.2);
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* Sharp Editorial offset border frames */
+.offset-border-frame {
+  position: relative;
+}
+.offset-border-frame::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: -12px;
+  bottom: -12px;
+  border: 1px solid #D5B875;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Fade reveal animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth expansion hovers */
+.hover-gold-expand {
+  position: relative;
+  overflow: hidden;
+}
+.hover-gold-expand::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #D5B875;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-gold-expand:hover::after {
+  width: 100%;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

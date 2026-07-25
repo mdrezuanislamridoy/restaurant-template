@@ -1,8 +1,8 @@
 'use client';
 
-import React, { use, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { ArrowLeft, Clock, Calendar, MessageSquare, Check, User, Share2 } from 'lucide-react';
 import { FaFacebookF } from 'react-icons/fa';
 
@@ -15,10 +15,10 @@ interface PostDetail {
   contentHtml: string;
 }
 
-export default function BlogPostDetail({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = use(params);
+export default function BlogPostDetail() {
+  const params = useParams();
   const router = useRouter();
-  const slug = resolvedParams.slug;
+  const slug = (params?.slug as string) || '';
   const [copied, setCopied] = useState(false);
 
   const postsData: { [key: string]: PostDetail } = {

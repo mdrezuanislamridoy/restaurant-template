@@ -75,13 +75,21 @@ body {
 .offset-border-frame::before {
   content: "";
   position: absolute;
-  top: 12px;
-  left: 12px;
-  right: -12px;
-  bottom: -12px;
+  top: 6px;
+  left: 6px;
+  right: 0px;
+  bottom: 0px;
   border: 1px solid #D5B875;
   z-index: 0;
   pointer-events: none;
+}
+@media (min-width: 640px) {
+  .offset-border-frame::before {
+    top: 12px;
+    left: 12px;
+    right: -12px;
+    bottom: -12px;
+  }
 }
 
 /* Fade reveal animation */

@@ -96,9 +96,9 @@ export default function Home() {
             </div>
 
             {/* Right side: Single Elegant Offset Image */}
-            <div className="hidden lg:block lg:col-span-5 relative">
-              <div className="offset-border-frame w-full max-w-sm ml-auto">
-                <div className="h-[460px] bg-[#0C2522]">
+            <div className="block mt-8 lg:mt-0 lg:col-span-5 relative">
+              <div className="offset-border-frame w-full max-w-xs sm:max-w-sm mx-auto lg:ml-auto">
+                <div className="h-[260px] sm:h-[380px] lg:h-[460px] bg-[#0C2522]">
                   <img
                     src={heroSlides[activeSlide]}
                     alt="Michelin steakhouse grill"

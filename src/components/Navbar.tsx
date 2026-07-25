@@ -21,10 +21,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onLoginClick, isLoggedIn, userna
   const cartItemsCount = cart.reduce((count, item) => count + item.qty, 0);
 
   useEffect(() => {
+    let isScrolled = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const nowScrolled = window.scrollY > 20;
+      if (nowScrolled !== isScrolled) {
+        isScrolled = nowScrolled;
+        setScrolled(nowScrolled);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

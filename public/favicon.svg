@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Circular outer ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#D5B875" stroke-width="14"/>
+  <circle cx="256" cy="256" r="198" fill="none" stroke="#D5B875" stroke-width="3" stroke-dasharray="10 10" stroke-opacity="0.6"/>
+  
+  <!-- Stylized Elegant W (Monogram) -->
+  <path d="M150 190 L210 350 L256 250 L302 350 L362 190" fill="none" stroke="#D5B875" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Three luxury gold flame sparks above the W representing grill/fire -->
+  <path d="M256 115 C256 115, 244 145, 256 160 C268 145, 256 115, 256 115" fill="#D5B875"/>
+  <path d="M208 135 C208 135, 200 155, 212 168 C224 155, 208 135, 208 135" fill="#D5B875"/>
+  <path d="M304 135 C304 135, 312 155, 300 168 C288 155, 304 135, 304 135" fill="#D5B875"/>
+</svg>
